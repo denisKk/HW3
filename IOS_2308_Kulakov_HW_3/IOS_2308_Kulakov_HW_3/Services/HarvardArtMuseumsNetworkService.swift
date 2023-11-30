@@ -32,19 +32,11 @@ final class HarvardArtMuseumsNetworkService: IService {
         ServiceLocator.addService(service)
         return service
     }
-    
-    func clear() {
-        
-    }
-    
-    func remove() {
-        ServiceLocator.removeService(self)
-    }
-    
+
     func fetch(page: Int, limit: Int, completion: @escaping ([ArtworkModel]) -> ()) {
    
         
-        ArtworksAPI.everythingGet(apikey: "e49f1eac-bb98-456f-ac51-f7c9a8cdc116", hasimage: 1, page: page, size: limit) { result, error in
+        ArtworksAPI.everythingGet(apikey: "e49f1eac-bb98-456f-ac51-f7c9a8cdc116", hasimage: 1, page: page + 500, size: limit) { result, error in
 
             guard error == nil else {
                 print(error as Any)

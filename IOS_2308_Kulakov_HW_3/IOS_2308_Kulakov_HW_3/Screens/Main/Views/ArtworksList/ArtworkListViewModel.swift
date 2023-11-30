@@ -11,10 +11,7 @@ final class ArtworkListViewModel<Service: IService>: ObservableObject {
     var page: Int = 1
     let limit: Int = 10
     let networkService: Service.Type
-  //  var canLoad: Bool {get set}
-    
-    
-    
+  
     func fetch() {
         guard isLoading == false else { return }
         

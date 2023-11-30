@@ -27,15 +27,7 @@ final class ArtInstituteChicagoNetworkService: IService {
         ServiceLocator.addService(service)
         return service
     }
-    
-    func clear() {
-        
-    }
-    
-    func remove() {
-        ServiceLocator.removeService(self)
-    }
-    
+
     func fetch(page: Int, limit: Int, completion: @escaping ([ArtworkModel]) -> ()) {
        
         ArtworksAPI.everythingGet(page: "\(page)", limit: "\(limit)") { result, error in

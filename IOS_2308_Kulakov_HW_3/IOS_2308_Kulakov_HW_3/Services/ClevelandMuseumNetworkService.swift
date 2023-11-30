@@ -16,14 +16,6 @@ final class ClevelandMuseumNetworkService: IService {
         return service
     }
     
-    func clear() {
-        
-    }
-    
-    func remove() {
-        ServiceLocator.removeService(self)
-    }
-    
     func fetch(page: Int, limit: Int, completion: @escaping ([ArtworkModel]) -> ()) {
  
         ArtworksAPI.everythingGet(skip: page*limit, limit: limit, hasImage: 1) { result, error in

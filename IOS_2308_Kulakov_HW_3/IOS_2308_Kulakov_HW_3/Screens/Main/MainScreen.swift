@@ -26,8 +26,7 @@ struct MainScreen: View {
         .ignoresSafeArea(edges: .vertical)
         .preferredColorScheme(.dark)
     }
-    
-    
+
     
     @ViewBuilder
     var artworksList: some View {

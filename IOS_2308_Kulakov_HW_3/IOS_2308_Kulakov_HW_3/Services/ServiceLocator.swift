@@ -4,11 +4,9 @@ import Foundation
 protocol IService {
     static var service: Self {get}
     
-    func clear()
-    func remove()
-    
     func fetch(page: Int, limit: Int, completion: @escaping ([ArtworkModel]) -> ())
 }
+
 protocol IServiceLocator {
     func service<T>() -> T?
 }
@@ -25,14 +23,6 @@ final class ServiceLocator: IServiceLocator {
     
     class func addService<T>(_ service: T) {
         return instance.addService(service)
-    }
-    
-    class func clear() {
-        instance.services.removeAll()
-    }
-    
-    class func removeService<T>(_ service: T) {
-        instance.removeService(service)
     }
     
     func service<T>() -> T? {

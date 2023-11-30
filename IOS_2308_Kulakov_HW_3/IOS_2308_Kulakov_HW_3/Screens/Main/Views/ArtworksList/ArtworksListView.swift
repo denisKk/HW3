@@ -26,7 +26,6 @@ struct ArtworksList<Service: IService>: View {
                         withAnimation {
                             artworkListVM.delete(artwork: artwork)
                         }
-                        
                     }
                     .navigationPushLink(destination: ArtworkScreen(artwork: artwork))
                     .onAppear{
